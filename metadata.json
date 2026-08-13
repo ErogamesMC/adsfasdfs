@@ -1,0 +1,8 @@
+{
+  "name": "Guía Stardew",
+  "description": "Calculadora de cultivos, enciclopedia de objetos, calendario de siembra y recomendaciones de cosecha de Stardew Valley en español 100% offline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
