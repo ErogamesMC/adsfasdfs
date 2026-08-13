@@ -3,12 +3,12 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 android {
-    namespace = "com.app.msf:1000275838"
-    compileSdk = 36
+    namespace = "com.app.msf"
+    compileSdk = 34
     defaultConfig {
-        applicationId = "com.app.msf:1000275838"
+        applicationId = "com.app.msf"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
