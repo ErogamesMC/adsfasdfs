@@ -17,6 +17,8 @@ jobs:
         gradle-version: '8.5'
     - name: Bootstrap Android Project if Missing
       run: |
+        echo 'android.useAndroidX=true' > gradle.properties
+        echo 'android.nonTransitiveRClass=true' >> gradle.properties
         if [ ! -f "settings.gradle.kts" ] && [ ! -f "settings.gradle" ]; then
           cat << 'EOF' > settings.gradle.kts
         pluginManagement {
