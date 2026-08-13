@@ -11,6 +11,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    - name: Setup Gradle 8.5 Environment
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
     - name: Bootstrap Android Project if Missing
       run: |
         if [ ! -f "settings.gradle.kts" ] && [ ! -f "settings.gradle" ]; then
@@ -89,12 +93,8 @@ jobs:
         }
         EOF
         fi
-    - name: Generate Compatible Gradle 8.5 Wrapper
-      run: gradle wrapper --gradle-version 8.5
-    - name: Make Gradlew Executable
-      run: chmod +x gradlew
     - name: Build Real Debug APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: gradle assembleDebug --stacktrace
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
