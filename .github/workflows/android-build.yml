@@ -89,10 +89,10 @@ jobs:
         }
         EOF
         fi
-    - name: Generate Gradle Wrapper
-      run: gradle wrapper || true
+    - name: Generate Compatible Gradle 8.5 Wrapper
+      run: gradle wrapper --gradle-version 8.5
     - name: Make Gradlew Executable
-      run: chmod +x gradlew || true
+      run: chmod +x gradlew
     - name: Build Real Debug APK
       run: ./gradlew assembleDebug --stacktrace
     - name: Upload APK Artifact
